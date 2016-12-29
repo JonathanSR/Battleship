@@ -103,14 +103,14 @@ class BoardTest < Minitest::Test
     refute board.coordinates_are_valid?(first_coordinate, second_coordinate)
   end
 
-  def test_can_board_place_ships
-    board = Board.new
-    coordinates = Coordinates.new
-    first_coordinate = [0,0]
-    second_coordinate = [0,1]
-    first_piece = first_coordinate
-    second_piece = second_coordinate
-    assert_equal "*", board.game_pieces_board(first_piece = "*")
-    assert_equal "*", board.game_pieces_board(second_piece = "*")
-  end
+  # def test_can_board_place_ships
+  #   board = Board.new
+  #   coordinates = Coordinates.new
+  #   first_coordinate = [0,0]
+  #   second_coordinate = [0,1]
+  #   first_piece = first_coordinate
+  #   second_piece = second_coordinate
+  #   assert_equal "*", board.game_pieces_board(first_piece = "*")
+  #   assert_equal "*", board.game_pieces_board(second_piece = "*")
+  # end
 end

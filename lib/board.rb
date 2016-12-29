@@ -3,14 +3,14 @@ require './lib/message'
 require 'pry'
 
 class Board
-  attr_reader :game_pieces_board, :game_board, :first_piece, second_piece
+  attr_reader :game_pieces_board, :game_board, #:first_piece, :second_piece
   
   def initialize
   @coordinates = Coordinates.new
   @game_pieces_board =  Array.new(4, "-").map{|row| Array.new(4, "-")}
   @game_board = Array.new(4, "-").map{|row| Array.new(4, "-")}
-  @first_piece = first_piece
-  @second_piece = second_piece
+  # @first_piece = first_piece
+  # @second_piece = second_piece
   end
 
   def row_marker
@@ -55,9 +55,9 @@ class Board
 
   def space_empty?(x, y)
     if game_pieces_board[x][y] == "-"
-    false
+    true
     else 
-    true  
+    false
     end
   end
 
@@ -102,14 +102,14 @@ class Board
     end
   end
 
-  def place_two_unit_ship
-    @first_piece
-    @second_piece
-    if coordinates_are_valid?(first_coordinate, second_coordinate) && space_empty == true
-    game_pieces_board(first_piece = "*")
-    game_pieces_board(second_piece = "*")
-    end
-  end
+  # def place_two_unit_ship
+  #   @first_piece
+  #   @second_piece
+  #   if coordinates_are_valid?(first_coordinate, second_coordinate) && space_empty == true
+  #   game_pieces_board(first_piece = "*")
+  #   game_pieces_board(second_piece = "*")
+  #   end
+  # end
 end
 
 
